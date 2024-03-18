@@ -19,7 +19,7 @@ exports.getAllCars = async (req, res) => {
 exports.getCarById = async (req, res) => {
   try {
     const result = await Car.findById(req.params.id);
-    if (result && result.length !== 0) {
+    if (result) {
       return res.status(200).send({
         msg: "Auta nalezena",
         payload: result
